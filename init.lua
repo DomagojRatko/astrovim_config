@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "kanagawa",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -31,7 +31,7 @@ return {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
+        enabled = false, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -82,4 +82,17 @@ return {
     --   },
     -- }
   end,
+
+  options = {
+    opt = {
+    -- set to true or false etc.
+      relativenumber = true, -- sets vim.opt.relativenumber
+      number = true, -- sets vim.opt.number
+    spell = false, -- sets vim.opt.spell
+    signcolumn = "auto", -- sets vim.opt.signcolumn to auto
+    wrap = false, -- sets vim.opt.wrap
+    shiftwidth = 4,
+    tabstop = 4,
+  },
+  }
 }

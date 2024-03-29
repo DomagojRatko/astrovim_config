@@ -31,7 +31,16 @@ return {
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- Quick save
+    -- go definition
+    vim.api.nvim_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', { noremap = true, silent = true }),
+    -- go declaration
+    vim.api.nvim_set_keymap('n', 'ga', '<Cmd>lua vim.lsp.buf.declaration()<CR>', { noremap = true, silent = true }),
+    -- Trouble toggle window
+    vim.api.nvim_set_keymap('n', '<leader>xx', '<Cmd>TroubleToggle<CR>', { noremap = true, silent = true }),
+    vim.api.nvim_set_keymap('n', '<leader>fx', '<Cmd>TodoTelescope<CR>', { noremap = true, silent = true }),
+    -- Switch to the next buffer tab
+    vim.api.nvim_set_keymap('n', '<C-Tab>', ':bnext<CR>', { noremap = true, silent = true })
   },
   t = {
     -- setting a mapping to false will disable it
